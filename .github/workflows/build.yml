@@ -15,18 +15,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.10.4'
-
-      - name: Install dependencies
+        uses: actions/checkout@v4
+        
+      - name: pwd
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          docker run -d --name sonarq -p 8089:9000 sonarqube:9.9-community
+          ls
+          pwd
+
+     # - name: Set up Python
+     #   uses: actions/setup-python@v2
+     #   with:
+     #     python-version: '3.10.4'
+
+      # - name: Install dependencies
+      #   run: |
+      #     python -m pip install --upgrade pip
+      #     pip install -r requirements.txt
+      #     docker run -d --name sonarq -p 8089:9000 sonarqube:9.9-community
          
           # fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
       #- name: Run SonarQube analysis
