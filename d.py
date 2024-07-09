@@ -1,2 +1,3 @@
-def d_value():
-    return 4
+# Adding a comment
+def a_value():
+    return 2
